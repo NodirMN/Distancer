@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&amp;display=swap">
+</head>
+<body>
+    <input type="range" id="control" min="-6300" step="10" max="100" value="0" oninput="upDown()" onchange="upDown()">
+
+<div class="buttons">
+	<button id="outer-space" onclick="goToLevel(100);">OUTER SPACE</button>
+	<button id="crust-level" onclick="goToLevel(0);">EARTH'S CRUST</button>
+	<button id="upper-mantle" onclick="goToLevel(-70);">UPPER MANTLE</button>
+	<button id="lower-mantle" onclick="goToLevel(-670);">LOWER MANTLE</button>
+	<button id="outer-core" onclick="goToLevel(-2900);">OUTER CORE</button>
+	<button id="inner-core" onclick="goToLevel(-5100);">INNER CORE</button>
+	<button id="the-center" onclick="goToLevel(-6300);">THE CENTER</button>
+</div>
+
+<div class="info"><span id="meters">0 KM</span></div>
+
+<div class="content" id="world">
+
+	<div class="space">
+		<div class="iss"></div>
+		<div class="moon"><span class="crater"></span></div>
+		<div class="sun"></div>
+	</div>
+	<div class="sky">
+		<div class="iono"></div>
+		<div class="meso"></div>
+		<div class="estrato"></div>
+		<div class="tropo">
+			<div class="clouds high-level"></div>
+			<div class="clouds mid-level"></div>
+			<div class="clouds low-level"></div>
+		</div>
+	</div>
+	<div class="mountains"><span><i class="temp">~15 &deg;C</i><i class="pres">0.1 MPa</i></span></div>
+	<div class="ocean"></div>
+	<div class="drill"></div>		
+	<div class="crust"><span><i class="temp">200 &deg;C</i><i class="pres">110 MPa</i></span><span><i class="temp">500 &deg;C</i><i class="pres">3 GPa</i></span></div>
+	<div class="mantle-upper"><span><i class="temp">600 &deg;C</i><i class="pres">5 GPa</i></span><span><i class="temp">900 &deg;C</i><i class="pres">24 GPa</i></span></div>
+	<div class="mantle-lower"><span><i class="temp">1600 &deg;C</i><i class="pres">24GPa</i></span><span><i class="temp">3500 &deg;C</i><i class="pres">136 GPa</i></span></div>
+	<div class="core-outer"><span><i class="temp">4800 &deg;C</i><i class="pres">150 GPa</i></span><span><i class="temp">6500 &deg;C</i><i class="pres">300 GPa</i></span></div>
+	<div class="core-inner"><span><i class="temp">6600&deg;C</i><i class="pres">330 GPa</i></span><span><i class="temp">6900&deg;C</i><i class="pres">360 GPa</i></span></div>
+
+</div>
+
+<div class="situation"></div>
+<div class="scale"></div>
+
+	<div class="legend"><span>1 ATM = 0.1MPa</span><span>&nbsp; 1 KM = 0.62 MILES</span><span>&nbsp;</span></div>
+        <script src="app.js"></script>
+</body>
+</html>

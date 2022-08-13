@@ -1,0 +1,1092 @@
+:root {
+	--space1: #000;
+    --space2: #10194c;
+    --sky1: #4490a9;
+    --sky2: #add8e6;
+    --land1: #8bc34a;
+    --land2: #a78f31;
+    --crust1: #a75131;
+    --crust2: #9b2a00;
+    --mantle1a: #ff3f00;
+    --mantle1b: #ff6600;
+    --mantle2a: #ff9900;
+    --mantle2b: #ffcc00;
+    --core1a: #ffe024;
+    --core1b: #fff127;
+    --core2a: #fff890;
+    --core2b: #fffcd8;
+	--rback: #f10;
+	--rbord: #2e2e2e;
+	--rbutt: #fc0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/*transform: scale(0.35);*/
+    font-family: Arial, Helvetica, serif;
+}
+
+.content {
+	width: 100vw;
+    height: 6500vh;
+    background: linear-gradient(180deg, #10194c 0 0.25%, lightblue 0.275% 1.8%, #795548 0 2.8785%, #ff9800 0 12.11%, #ff5722 0 46.415%, #e91e63 0 85%, #7a0000 0 100%);
+    top: -65vh;
+    position: absolute;
+	transition: all 1s ease 0s;
+}
+
+.content:before {
+    content: "";
+    background: 
+		radial-gradient( circle at 50% 50%, #fff 0 2px, #fff0 3px 100%),
+		linear-gradient(180deg, var(--space1) 80%, var(--space2));
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    top: -75vh;
+}
+
+.content:after {
+    content: "";
+    background: linear-gradient(0deg, black 70%, #780000 90%, #fff0 100%);
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    bottom: 16vh;
+}
+
+#control {
+    position: absolute;
+    left: 2vh;
+    bottom: -1.25vh;
+    width: 96vh;
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    height: 3.25vh;
+    z-index: 222;
+    background: #333;
+    border-radius: 2vmin;
+    padding: 0 0.5vh;
+	box-shadow: -0.25vmin -0.25vmin 0.5vmin 0vmin #0008, -0.25vmin 0.25vmin 0.5vmin 0 #ffffff6b;
+	background: 
+		linear-gradient(-90deg, #0000, #0008 4.5%, #0000 0, #0008 6.75%,  #0000 0, #0008 14.5%, #0000 0, #0008 47%, #0000 0, #0008 79.5%, #0000 0, #0008 97%,  #fff0 0 100%), 
+		linear-gradient(-90deg, var(--space2) 0 1.75%, var(--sky2) 0% 4.5%, var(--land1) 0 6.75%, var(--mantle1a) 0 14.5%, var(--mantle2a) 0 47%, var(--core1a) 0 79.5%, var(--core2a) 0 97%, #111 0 100%);
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** RANGE STYLES ***/
+
+input[type=range] {
+  background: #fff2;
+}
+
+input[type=range]:hover {
+  cursor: pointer;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range],
+input[type=range]::-webkit-slider-runnable-track,
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background-color: var(--rbutt);
+  width: 5vmin;
+  height: 5vmin;
+  border: 3px solid var(--rbord);
+  border-radius: 50%;
+  margin-top: calc(-2.5vmin + 1px);
+  transition: all 0.5s ease 0s;
+  box-sizing: border-box;
+  box-shadow: -0.25vmin -0.25vmin 0.5vmin 0vmin #0008, -0.25vmin 0.25vmin 0.5vmin 0 #ffffff6b;
+  background: 
+		radial-gradient(circle at 55% 0%, #007500 0 18%, #fff0 20%),
+		radial-gradient(circle at 15% -6%, #007500 0 18%, #fff0 20%),
+		radial-gradient(ellipse at 45% 120%, #019601 0 18%, #fff0 20%),
+		radial-gradient(circle at 60% 105%, #019601 0 18%, #fff0 20%),
+		radial-gradient(circle at 115% 45%, #fffc 0 16%, #fff0 20%),
+		radial-gradient(circle at -18% 55%, #fffd 0 20%, #fff0 23%),
+		radial-gradient(circle at 60% 100%, #0176d2 45%, #444 100% );
+}
+
+input[type=range]::-moz-range-thumb {
+  background-color: var(--rbutt);
+  width: 5vmin;
+  height: 5vmin;
+  border: 23x solid var(--rbord);
+  border-radius: 50%;
+  transition: all 0.5s ease 0s;
+  box-sizing: border-box;
+  box-shadow: -0.25vmin -0.25vmin 0.5vmin 0vmin #0008, -0.25vmin 0.25vmin 0.5vmin 0 #ffffff6b;
+  background: 
+		radial-gradient(circle at 55% 0%, #007500 0 18%, #fff0 20%),
+		radial-gradient(circle at 15% -6%, #007500 0 18%, #fff0 20%),
+		radial-gradient(ellipse at 45% 120%, #019601 0 18%, #fff0 20%),
+		radial-gradient(circle at 60% 105%, #019601 0 18%, #fff0 20%),
+		radial-gradient(circle at 115% 45%, #fffc 0 16%, #fff0 20%),
+		radial-gradient(circle at -18% 55%, #fffd 0 20%, #fff0 23%),
+		radial-gradient(circle at 60% 100%, #0176d2 45%, #444 100% );
+}
+
+input[type=range]::-ms-thumb {
+  background-color: var(--rbutt);
+  width: 5vmin;
+  height: 5vmin;
+  border: 3px solid var(--rbord);
+  border-radius: 50
+  transition: all 0.5s ease 0s;
+  box-sizing: border-box;
+  box-shadow: -0.25vmin -0.25vmin 0.5vmin 0vmin #0008, -0.25vmin 0.25vmin 0.5vmin 0 #ffffff6b;
+  background: 
+		radial-gradient(circle at 55% 0%, #007500 0 18%, #fff0 20%),
+		radial-gradient(circle at 15% -6%, #007500 0 18%, #fff0 20%),
+		radial-gradient(ellipse at 45% 120%, #019601 0 18%, #fff0 20%),
+		radial-gradient(circle at 60% 105%, #019601 0 18%, #fff0 20%),
+		radial-gradient(circle at 115% 45%, #fffc 0 16%, #fff0 20%),
+		radial-gradient(circle at -18% 55%, #fffd 0 20%, #fff0 23%),
+		radial-gradient(circle at 60% 100%, #0176d2 45%, #444 100% );
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  background-color: #fff0;
+  transition: all 0.5s ease 0s;
+  height: 3px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  outline: none;
+}
+
+input[type=range]::-moz-range-track {
+  background-color: #fff0;
+  transition: all 0.5s ease 0s;
+  height: 3px;
+}
+
+input[type=range]::-ms-track {
+  background-color: #fff0;
+  transition: all 0.5s ease 0s;
+  height: 3px;
+}
+
+input[type=range]::-ms-fill-lower {
+  background-color: #fff0
+}
+
+input[type=range]::-ms-fill-upper {
+  background-color: #fff0;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.info {
+	background: #0008;
+	position: absolute;
+	top: calc(50% - 1vh);
+	padding: 1vmin 1.5vmin;
+	z-index: 2;
+	height: 5vh;
+	color: #fff;
+	font-size: 1.75em;
+	line-height: 1.15em;
+	border-radius: 2px;
+} 
+
+.info span:before {
+	content: "";
+	border: 1vh solid #fff0;
+	border-right-color: #0008;
+	position: absolute;
+	left: -2vh;
+	top: 1.75vh;
+} 
+.info span:after {
+	content: "";
+	border: 1vh solid #fff0;
+	border-left-color: #0008;
+	position: absolute;
+	right: -2vh;
+	top: 1.75vh;
+} 
+
+.info:before, .info:after {
+	content: "";
+	background: repeating-linear-gradient(90deg, #0008 0% 1.5%, #fff0 0 3%);
+	width: 50vw;
+	right: -51vw;
+	height: 0.4vh;
+	position: absolute;
+	top: 2.75vh;
+} 
+
+.info:after {
+    background: repeating-linear-gradient(-90deg, #0008 0% 1.5%, #fff0 0 3%);
+	right: inherit;
+    left: -51vw;
+} 
+
+
+
+
+
+
+
+
+
+
+.space {
+    height: 17vh;
+	position: relative;
+    background: linear-gradient(180deg, var(--space2) 0, var(--sky1) 100%);
+}
+
+.sky {
+    height: 100vh;
+    background: linear-gradient(180deg, var(--sky1), var(--sky2));
+	position: relative;
+	/*
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	*/
+}
+/*
+.sky:after {
+    content: "CLOUDS";
+    position: absolute;
+    bottom: 1vh;
+    font-size: 01em;
+    text-orientation: upright;
+    writing-mode: vertical-lr;
+    color: #7cb7ca;
+    text-shadow: -1px 0 0 #fff8;
+    left: calc(50% - 3vw);
+    letter-spacing: -1px;
+}
+*/
+
+.mountains {
+    position: absolute;
+    top: 107vh;
+    background: 
+		conic-gradient(from 135deg at 99vw 5.4vh, var(--land1) 0 25%, #fff0 0 100%),
+		conic-gradient(from 135deg at 88vw 1.4vh, var(--land1) 0 25%, #fff0 0 100%),
+		conic-gradient(from 135deg at 83vw 3.4vh, #83bf3d 0 25%, #fff0 0 100%), 
+		conic-gradient(from 135deg at 94vw 6vh, #83bf3d 0 25%, #fff0 0 100%), 
+		conic-gradient(from 135deg at 91vw 4vh, #75af32 0 25%, #fff0 0 100%), 
+		conic-gradient(from 135deg at 97vw 5vh, #75af32 0 25%, #fff0 0 100%);
+    width: 100vw;
+    height: 10.1vh;
+}
+.mountains:before {
+    content: "EVEREST \0020 \0020 \0020 \A 8848 M \0020 \2198";
+    position: absolute;
+    right: 12.15vw;
+    font-size: 0.75em;
+    color: #7bacbd;
+    top: -1.5vh;
+    text-shadow: -1px 0 0 #ffffff4f;
+    width: 6vw;
+    text-align: right;
+    white-space: pre-wrap;
+}
+
+.ocean, .drill {
+    position: absolute;
+    top: 117vh;
+    background: linear-gradient(180deg, #03a9f4cf, #00567cbf);
+    width: 50vw;
+    height: 5vh;
+    border-radius: 0 0 100% 0;
+	z-index: 1;
+}
+.ocean:before {
+    content: "";
+    position: absolute;
+    top: 4.7vh;
+    transform: rotate(-1.5deg);
+    left: 12vw;
+    background: linear-gradient(180deg, #296971, #0b2e3dbf);
+    width: 5vw;
+    height: 6vh;
+    border-radius: 0% 100% 29% 71% / 0% 0% 100% 100% ;
+}
+
+
+.ocean:after {
+    content: "\0020 \0020 \0020 \0020 MARIANAS TRENCH \A \2196 \0020 11 KM ";
+    top: 10.5vh;
+    left: 16.5vw;
+    width: 14vw;
+    position: absolute;
+    font-size: 0.75em;
+    color: #85560e;
+    text-shadow: -1px 0 0 #cbc2c244;
+    text-align: left;
+    white-space: pre-wrap;
+}
+
+.drill {
+	left: 50vw;background: #fff0;
+    height: 12vh;
+}
+
+.drill:before {
+    content: "THE LONGEST DRILLING \0020 \0020 \0020 \A \2196 \0020 12 KM ";
+    top: 11vh;
+    left: 22.5vw;
+    width: 14vw;
+    position: absolute;
+    font-size: 0.75em;
+    color: #85560e;
+    text-shadow: -1px 0 0 #cbc2c244;
+    white-space: pre-wrap;
+}
+
+.drill:after {
+    content: "";
+    width: 0.5vw;
+    height: 12vh;
+    position: absolute;
+    right: 28vw;
+    background: repeating-linear-gradient(45deg, #fff0 0 0.125vw, #00000080 0 0.25vw, #fff0 0.25vw);
+    border-bottom: 0.25vh solid #ffeb3b;
+}
+
+
+.crust {
+    height: 70vh;
+	position: relative;
+    background: linear-gradient(180deg, var(--land1), var(--land2) 5%, var(--crust1), var(--crust2));
+}
+
+.crust:before {
+    content: "EARTH'S CRUST";
+    color: #76531294 !important;
+    text-shadow: -1px 0 0 #00000038 !important;
+}
+
+.mantle-upper {
+    height: 600vh;
+	position: relative;
+    background: linear-gradient(180deg, var(--mantle1a), var(--mantle1b));
+	border-top: 3px dotted #0003;
+    border-bottom: 3px dotted #0002;
+}
+
+.mantle-lower {
+    height: 2230vh;
+	position: relative;
+    background: linear-gradient(180deg, var(--mantle2a), var(--mantle2b));
+}
+
+.core-outer {
+    height: 2200vh;
+	position: relative;
+    background: linear-gradient(180deg, var(--core1a), var(--core1b));
+}
+
+.core-inner {
+    height: 1200vh;
+	position: relative;
+    background: linear-gradient(180deg, var(--core2a), var(--core2b));
+}
+
+
+.clouds {
+	position: absolute;
+    width: 100%;
+    display: flex;
+    padding-left: 25vw;
+    text-align: left;
+}
+
+.high-level {
+    bottom: 7vh;
+    background: linear-gradient(180deg, #fff0 , #fff6 30% 70%, #fff0);
+    height: 5vh;
+}
+
+.mid-level {
+    bottom: 2vh;
+    background: linear-gradient(180deg, #fff0 , #fff4 30% 70%, #fff0);
+    height: 5vh;
+}
+
+.low-level {
+    bottom: 0;
+    background: linear-gradient(180deg, #fff0 , #fff2 30% 70%, #fff0);
+    height: 2vh;
+}
+
+.clouds:before {
+    font-size: 0.65em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7cb7ca;
+    text-shadow: -1px 0 0 #fff8;
+}
+
+.clouds.high-level:before {
+    content: "HIGH CLOUDS";
+}
+
+.clouds.mid-level:before {
+    content: "MID CLOUDS";
+}
+
+.clouds.low-level:before {
+    content: "LOW CLOUDS";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sky > div {
+    border-top: 3px dotted #0003;
+	position: relative;
+}
+
+
+.sky > div:before, .space:before, .crust:before, .mantle-upper:before, .mantle-lower:before, .core-outer:before, .core-inner:before {
+    font-size: 1.5em;
+    right: 0.5vw;
+    color: #fff3;
+    text-shadow: -1px 0 0 #6da4b7;
+    position: absolute;
+    height: 100%;
+    border-right: 3px dotted #0003;
+    padding: 2.5vmin 2vmin;
+    box-sizing: border-box;
+    width: calc(100% - 1vw);
+    text-align: center;
+    left: 0.5vw;
+	line-height: 4vh;
+}
+
+
+
+.space:before {
+    content: "OUTER SPACE";
+    text-shadow: -1px 0 0 #000000 !important;
+    color: #1c3461;
+    top: -7vh;
+	height: 24vh;
+}
+
+
+.iono {
+    background: #4490a9;
+    height: 20vh;
+    width: 100vw;
+}
+
+
+.iono:before {
+    content: "IONOSPHERE";
+	text-shadow: -1px 0 0 #235c6e !important;
+}
+
+.iono:after, .meso:after, .estrato:after, .tropo:after,
+.mantle-upper:after, .mantle-lower:after, .core-outer:after, .core-inner:after {
+    content: "KARMAN LINE";
+    width: 100vw;
+    position: absolute;
+    font-size: 0.85em;
+    color: #fff6;
+    height: 6em;
+    top: -4.15em;
+    background: linear-gradient(180deg, #fff0, #fff3 45% 55%, #fff0 );
+    line-height: 2em;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 2vh;
+	white-space: pre-wrap;
+}
+
+.meso {
+    background: #4490a97a;
+    height: 30vh;
+    width: 100vw;
+}
+
+.meso:after {
+    content: "\0020 MESOPAUSE \0020 \0020 -80 \2103";
+}
+
+.meso:before {
+    content: "MESOSPHERE";
+	text-shadow: -1px 0 0 #2c6578 !important;
+}
+
+.estrato {
+    background: #68b2cb91;
+    height: 30vh;
+    width: 100vw;
+}
+
+.estrato:before {
+    content: "STRATOSPHERE";
+	text-shadow: -1px 0 0 #428ca5 !important;
+}
+
+.estrato:after {
+    content: "\0020 STRATOPAUSE \0020 \0020 0 \2103";
+}
+
+.tropo {
+    background: #7dbcd178;
+    height: 20vh;
+    width: 100vw;
+}
+
+.tropo:before {
+    content: "TROPOSPHERE";
+}
+	
+
+.tropo:after {
+    content: "\0020 TROPOPAUSE \0020 \0020 -55 \2103";
+}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+/*** NAMES EARTH ***/
+	
+.mantle-upper:after, .mantle-lower:after, .core-outer:after, .core-inner:after {
+	height: 10em;
+    top: -7.15em;
+    line-height: 8em;
+    text-align: center;
+}
+	
+    
+	
+.mantle-upper:before {
+    content: "UPPER MANTLE";
+    color: #a12800 !important;
+    text-shadow: -1px 0 0 #ffffff38 !important;
+}
+
+.mantle-lower:before {
+    content: "LOWER MANTLE";
+    color: #a13715 !important;
+    text-shadow: -1px 0 0 #ffffff38 !important;
+}	
+
+.core-outer:before {
+    content: "OUTER CORE";
+    color: #814d00 !important;
+    text-shadow: -1px 0 0 #ffffff38 !important;
+	border-top: 3px dotted #ffcc004d;
+    border-bottom: 3px dotted #ffdd644d;
+    z-index: 1;
+}
+
+.core-inner:before {
+    content: "INNER CORE";
+    color: #bfb415 !important;
+    text-shadow: -1px 0 0 #ffffff38 !important;
+}
+
+
+	
+	
+	
+	
+	
+
+	
+/*** DISCONTINUITIES ***/
+.mantle-upper:after, .mantle-lower:after, .core-outer:after, .core-inner:after {
+    background: linear-gradient(180deg, #0000, #81090082 65% 75%, #0000);
+}
+	
+.mantle-upper:after {
+    content: "MOHO DISCONTINUITY";
+	color: #681a00;
+}
+	
+.mantle-lower:after {
+    content: "REPETTI DISCONTINUITY";
+    color: #8b2d01;
+}
+	
+.core-outer:after {
+    background: linear-gradient(180deg, #0000, #ff8800 65% 75%, #0000);
+    content: "GUTENBERG DISCONTINUITY";
+    color: #ad5235;
+}
+
+.core-inner:after {
+    background: linear-gradient(180deg, #0000, #ffa000 65% 75%, #0000);
+    content: "LEHMANN DISCONTINUITY";
+    color: #ad5227;
+}	
+
+
+
+
+
+.iss {
+	background: linear-gradient(90deg, #ffe7c3 0 8%, #fff0 8% 12%, #ffe7c3 12% 20%, #fff0 0 80%, #ffe7c3 0 88%, #fff0 88% 92%, #ffe7c3 92% 100% ), linear-gradient(180deg, #fff0 40%, #efefef 40% 60%, #fff0 60%);
+    width: 4vw;
+    height: 3vh;
+    left: 60vw;
+    top: -15vh;
+    position: absolute;
+    filter: blur(0.5px);
+    transform: rotate(-5deg);
+}	
+
+.iss:before {
+    content: "";
+    width: 40%;
+    height: 85%;
+    background: linear-gradient(180deg, #fff 25%, #fff0 25% 85%, #fff 85%), linear-gradient(90deg, #fff0 40%, #fff 40% 60%, #fff0 60%);
+    position: absolute;
+    margin-left: 31%;
+    margin-top: 5%;
+    border: 1px dashed #000000;
+    box-sizing: border-box;
+}
+
+.iss:after {
+    content: "\0020 \0020 \0020 \0020 ISS \A \2196 \0020 400 KM";
+    position: absolute;
+    margin-left: 5.25vw;
+    margin-top: 4.25vh;
+    transform: rotate(5deg);
+    width: 5vw;
+    white-space: pre-wrap;
+    font-size: 0.75em;
+    color: #ffffff;
+    top: -1.5vh;
+    text-shadow: 0px 0 0 #fff8;
+}
+
+
+
+
+
+
+.moon {
+    position: absolute;
+    top: -32vh;
+    left: 20vw;
+    width: 10vw;
+    height: 10vw;
+     border-radius: 100%;
+    background: radial-gradient( circle at 50% 50%, #fdfdfd 0% 6vmin, #ffffff00 7.5vmin 100% ), #fff;
+    box-shadow: 0 0 8em 4em #6493a9, 0 0 8em -16em #ff660000 inset, 0 0 20px 5px #fdfdfd;
+    mix-blend-mode: exclusion;
+}
+
+.moon:before {
+    content: "";
+    background: radial-gradient( circle at 100% 60%, #ffffff00 0% 60%, #dddddd 75% 100% );
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    border-radius: 100%;
+}
+
+.moon:after {
+    content: "\0020 \0020 \0020 \0020 MOON \A \2196 \0020 384\200a 400 KM";
+    width: 4.5vmin;
+    height: 4.5vmin;
+    position: absolute;
+    width: 10vw;
+    left: 10vw;
+    white-space: pre-wrap;
+    font-size: 0.75em;
+    color: #ffffff;
+    top: 12vh;
+    text-shadow: 0px 0 0 #fff8;
+}
+.moon .crater {
+    content: "";
+    background: radial-gradient( circle at 0% 40%, #efefef 0% 60%, #ededed 75% 100% );
+    width: 4.5vmin;
+    height: 4.5vmin;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    border-radius: 100%;
+    filter: blur(2px);
+}
+
+
+
+
+
+
+
+.sun {
+    width: 10vw;
+    height: 10vh;
+    border: 1px dotted #ff6600;
+    background: #ffcc00;
+    border-radius: 0 0 0 100%;
+    position: absolute;
+    right: 0vw;
+    top: -35vh;
+}
+
+.sun:before {
+    content: "";
+    background: #ff660017;
+    width: 99%;
+    height: 99%;
+    display: block;
+    margin-left: 0.5%;
+    margin-top: 0.5%;
+    border-radius: 0 0 0 100%;
+    box-shadow: 0 0 10em 5em #ff66006b, 0 0 100px 50px #ff66006b inset, 0 0 10px 5px #ffcc00f2;
+}
+
+.sun:after {
+    content: "SUN \0020 \0020 \0020 \0020 \A 150\200a 000\200a 000 KM \0020 \2197";
+    top: 90%;
+    position: absolute;
+    left: -5vw;
+    white-space: pre-wrap;
+    text-align: right;
+    font-size: 0.75em;
+    color: #ffffffc7;
+    text-shadow: 0px 0 0 #fff8;
+}
+
+
+
+
+
+.buttons {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    padding: 1vmin 0 0px 7.5vmin;
+    width: 15em;
+}
+
+button {
+    border: 0;
+    background: #0008;
+    color: #fff;
+    padding: 0.35vmin 0.65vmin 0.35vmin 0.45vmin;
+    position: relative;
+    margin-top: 1px;
+    font-size: 0.75em;
+	cursor: pointer;
+	text-align: left;
+	display: block;
+}
+
+button:hover, button:focus {
+	transition: all 0.5s ease 0s;
+    background: #fff8;
+    color: #000;
+	margin-left: -1.125vw;
+}
+
+button:active {
+    margin-left: -1.25vw;
+}
+
+button:before {
+    content: "";
+    position: absolute;
+    border: 1.1vmin solid #fff0;
+    border-right-color: #0008;
+    left: -2.2vmin;
+    top: 0;
+}
+
+button:hover:before, button:focus:before {
+    border: 1.1vmin solid #fff0;
+    border-right-color: #fff8;
+	transition: all 0.5s ease 0s;
+}
+
+#outer-space {
+    margin-top: 1.5vh;
+}
+
+#crust-level {
+    
+}
+
+#lower-mantle {
+    margin-top: 5.2vh;
+}
+
+#outer-core {
+    margin-top: 29.1vh;
+}
+
+#inner-core {
+    margin-top: 28.85vh;
+}
+
+#the-center {
+    margin-top: 14.65vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** SCALE ***/
+.scale {
+    position: absolute;
+    bottom: 2vh;
+    right: 2vw;
+    height: 10vh;
+    content: "";
+    width: 0.5vh;
+    background: repeating-linear-gradient(180deg, #222 0 10%, #0000 0 20%);
+    border: 1px solid #222;
+    opacity: 0.75;
+    color: #222;
+}
+
+.scale:before {
+    content: "";
+    position: absolute;
+    left: -1vh;
+    border-top: 1px solid #222;
+    padding-top: 0.5vmin;
+    border-bottom: 1px solid #222;
+    width: 1vh;
+    box-sizing: border-box;
+    height: calc(100% + 2px);
+    top: -1px;
+}
+
+.scale:after {
+    position: absolute;
+    font-size: 0.7em;
+    left: -5.75vh;
+    top: -2.25vh;
+    width: 4em;
+    text-align: right;
+    white-space: pre-wrap;
+    line-height: 4.85vh;
+    content: "0 \0020\A KM \A 10 \0020 ";
+}
+
+
+
+/*** TEMPERATURES ***/
+
+.content > div > span {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 10vh;
+    font-family: Arial, Helvetica, serif;
+    color: #0000009e;
+    text-shadow: -1px 0 0 #fff4;
+	font-size: 0.95em;
+	line-height: 3vh;
+}
+
+.content > div > span + span {
+    top: 588vh;
+}
+
+.content > div.mantle-lower > span + span {
+    top: 2215vh;
+}
+
+.content > div.core-outer > span + span {
+    top: 2187vh;
+}
+
+.content > div.core-inner > span + span {
+    top: 1188vh;
+}
+
+.mountains span {
+    top: 2vh !important;
+}
+
+.crust span + span {
+    top: 58vh !important;
+}
+
+
+
+
+
+
+
+
+/*** ICONS ***/
+
+i {
+    width: 10em;
+    height: 3.5vmin;
+    display: inline-block;
+    margin-bottom: -0.7vmin;
+    text-align: right;
+    position: relative;
+    padding: 0.15em 2.5em 0 0;
+    font-style: normal;
+    /*background: linear-gradient(90deg, #ffffff4f 0 77%, #ffffffb3 0 100%);
+    border: 2px solid #fff8;*/
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    border-radius: 1em;
+	line-height: 1.55em;
+}
+
+i.temp:before {
+    content: "";
+    width: 0.65vmin;
+    height: 1.5vmin;
+    background: linear-gradient(90deg, #333 0 70%, #fff0 0 100%),repeating-linear-gradient(0deg, #fff0 0 1px, #333 0 3px);
+    border-radius: 1vmin 1vmin 0 0;
+    position: absolute;
+    right: 1.5vmin;
+    top: 0.35vmin;
+}
+
+i.temp:after {
+    content: "";
+    width: 1vmin;
+    height: 1vmin;
+    background: #333;
+    border-radius: 100%;
+    position: absolute;
+    margin-top: 1.4vmin;
+    right: 1.35vmin;
+}
+
+i.pres {
+    text-align: left;
+    padding: 0.15em 0 0 2.5em;
+    /*background: linear-gradient(-90deg, #ffffff4f 0 77%, #ffffffb3 0 100%);*/
+}
+
+i.pres:before {
+    content: "\21CA";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.9vmin;
+    top: -0.2em;
+    position: absolute;
+    color: #333;
+    text-shadow: none;
+    left: 1.1vmin;
+}
+
+i.pres:after {
+    content: "";
+    width: 2vmin;
+    height: 2vmin;
+    background: radial-gradient(circle at 50% -180%, #fff0 80%, #333 calc(80% + 1px) calc(80% + 2px), #fff0 calc(80% + 3px) 100%), radial-gradient(circle at 50% -50%, #fff0 50%, #333 calc(50% + 1px) calc(50% + 2px), #fff0 calc(50% + 3px) 100%);
+    position: absolute;
+    left: 1vmin;
+    top: 1.4vmin;
+}
+
+
+
+
+.legend {
+    position: absolute;
+    bottom: 1.75vh;
+    right: 6vw;
+    font-size: 0.7em;
+    color: #222;
+    padding: 1vmin 1.5em;
+    border: 1px solid #222;
+    line-height: 2.2em;
+    opacity: 0.75;
+}
+
+.legend span {
+    display: block;
+}
